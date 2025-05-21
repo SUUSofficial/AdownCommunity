@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdownCommunity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+            color: #1e88e5;
+        }
+
+        header {
+            background-color: #8ab4f8;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #64b5f6;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #bbdefb;
+        }
+
+        .auth-links {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .auth-links a {
+            display: inline-block;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #64b5f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .auth-links a:hover {
+            background-color: #42a5f5;
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #64b5f6;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        section {
+            margin: 2rem 0;
+        }
+
+        form {
+            background-color: #bbdefb;
+            padding: 1rem;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        form input, form textarea, form button {
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #90caf9;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #64b5f6;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #42a5f5;
+        }
+
+        .jump-button:hover {
+            background-color: #4a148c;
+        }
+
+        .news-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #bbdefb;
+            border-radius: 8px;
+        }
+
+        .news-section h2 {
+            color: #1e88e5;
+        }
+
+        .news-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .news-section li {
+            margin: 0.5rem 0;
+        }
+
+        .news-section a {
+            color: #42a5f5;
+            text-decoration: none;
+        }
+
+        .news-section a:hover {
+            color: #1e88e5;
+        }
+
+        .join-us-sidebar {
+            position: fixed;
+            top: 100px;
+            right: -300px;
+            width: 300px;
+            background-color: #bbdefb;
+            padding: 1rem;
+            border-radius: 8px 0 0 8px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            cursor: pointer;
+        }
+
+        .join-us-sidebar.open {
+            right: 0;
+        }
+
+        .toggle-sidebar:hover {
+            background-color: #42a5f5;
+        }
+
+        .contact-us-sidebar {
+            position: fixed;
+            top: 100px;
+            left: -300px;
+            width: 300px;
+            background-color: #bbdefb;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-us-sidebar.open {
+            left: 0;
+        }
+
+        .community-button {
+            display: inline-block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #64b5f6; /* 蓝色背景 */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .community-button:hover {
+            background-color: #42a5f5; /* 更深的蓝色 */
+        }
+    </style>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.join-us-sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        function toggleContactSidebar() {
+            const contactSidebar = document.querySelector('.contact-us-sidebar');
+            contactSidebar.classList.toggle('open');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>欢迎来到 AdownCommunity</h1>
+    </header>
+    <nav>
+        <a href="#">首页</a>
+        <a href="#">关于我们</a>
+        <a href="#">联系我们</a>
+    </nav>
+    <div class="auth-links">
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+    </div>
+    <main>
+        <h2>社区简介</h2>
+        <p>专注高效低压力社交的新一代社区平台</p>
+        <a href="community.html" class="community-button">进入社区</a>
+        <section class="news-section">
+            <h2>社区新闻</h2>
+            <ul>
+                <li><a href="#">AdownCommunity 即将举办年度大会</a></li>
+                <li><a href="#">新功能上线：支持多语言切换</a></li>
+                <li><a href="#">社区成员故事分享活动开始报名</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>社区活动</h2>
+            <p>我们定期举办各种活动，欢迎大家参与！</p>
+        </section>
+    </main>
+    <div class="join-us-sidebar" onclick="toggleSidebar()">
+        <h2>加入我们</h2>
+        <form>
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">邮箱:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">留言:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">提交</button>
+        </form>
+    </div>
+    <div class="contact-us-sidebar" onclick="toggleContactSidebar()">
+        <h2>联系我们</h2>
+        <form>
+            <label for="contact-name">姓名:</label>
+            <input type="text" id="contact-name" name="contact-name" required>
+
+            <label for="contact-email">邮箱:</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+
+            <label for="contact-message">留言:</label>
+            <textarea id="contact-message" name="contact-message" rows="4" required></textarea>
+
+            <button type="submit">发送</button>
+        </form>
+    </div>
+    <footer>
+        <p>© 2025 AdownCommunity. 版权所有.</p>
+    </footer>
+</body>
+</html>

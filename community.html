@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区 - AdownCommunity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd; /* 浅蓝色背景 */
+            color: #1e88e5; /* 深蓝色文字 */
+        }
+
+        header {
+            background-color: #64b5f6; /* 蓝色标题背景 */
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .community-section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .community-section h2 {
+            color: #42a5f5; /* 更深的蓝色标题 */
+            margin-bottom: 1rem;
+        }
+
+        .community-section p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #64b5f6; /* 蓝色背景 */
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #64b5f6; /* 蓝色背景 */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #42a5f5; /* 更深的蓝色 */
+        }
+
+        .community-features {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #bbdefb; /* 浅蓝色背景 */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .community-features h3 {
+            color: #1e88e5; /* 深蓝色标题 */
+            margin-bottom: 1rem;
+        }
+
+        .community-features ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .community-features li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .community-post {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #bbdefb; /* 浅蓝色背景 */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .community-post h3 {
+            color: #1e88e5; /* 深蓝色标题 */
+            margin-bottom: 1rem;
+        }
+
+        .community-post form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .community-post label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .community-post input, .community-post textarea {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #90caf9;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .community-post button {
+            background-color: #64b5f6;
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .community-post button:hover {
+            background-color: #42a5f5;
+        }
+
+        .community-posts {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #e3f2fd; /* 浅蓝色背景 */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .community-posts h3 {
+            color: #1e88e5; /* 深蓝色标题 */
+            margin-bottom: 1rem;
+        }
+
+        .community-posts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .community-posts li {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #bbdefb; /* 浅蓝色背景 */
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .community-posts h4 {
+            margin: 0 0 0.5rem 0;
+            color: #42a5f5; /* 更深的蓝色标题 */
+        }
+
+        .community-posts p {
+            margin: 0 0 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        .community-posts span {
+            font-size: 0.9rem;
+            color: #1e88e5;
+        }
+
+        .logout-button {
+            display: inline-block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #64b5f6; /* 蓝色背景 */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #42a5f5; /* 更深的蓝色 */
+        }
+
+        .clear-posts-button {
+            display: inline-block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background-color: #f44336; /* 红色背景 */
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .clear-posts-button:hover {
+            background-color: #d32f2f; /* 更深的红色 */
+        }
+
+        .sort-container {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .sort-container label {
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+
+        .sort-container select {
+            padding: 0.5rem;
+            border: 1px solid #90caf9;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>社区</h1>
+    </header>
+    <section class="community-section">
+        <h2>欢迎来到 AdownCommunity 社区</h2>
+        <p>在这里，您可以与志同道合的朋友交流，分享您的故事，参与丰富多彩的活动。</p>
+        <p>我们的社区致力于为每个人提供一个温暖、包容的环境。</p>
+        <div class="community-features">
+            <h3>社区特色</h3>
+            <ul>
+                <li>多语言支持，连接全球用户</li>
+                <li>丰富的活动和竞赛，激发创意</li>
+                <li>安全、包容的环境，保护隐私</li>
+                <li>实时聊天和论坛功能，促进交流</li>
+            </ul>
+        </div>
+        <div class="community-post">
+            <h3>发布动态</h3>
+            <form>
+                <label for="post-title">标题:</label>
+                <input type="text" id="post-title" name="post-title" required>
+
+                <label for="post-content">内容:</label>
+                <textarea id="post-content" name="post-content" rows="4" required></textarea>
+
+                <button type="submit">发布</button>
+            </form>
+        </div>
+        <div class="sort-container">
+            <label for="sort-options">排序方式:</label>
+            <select id="sort-options">
+                <option value="date">按时间排序</option>
+                <option value="likes">按点赞数排序</option>
+            </select>
+        </div>
+        <div class="community-posts">
+            <h3>社区动态</h3>
+            <ul>
+                <li>
+                    <h4>动态标题 1</h4>
+                    <p>这是一个示例动态内容，展示社区成员的分享。</p>
+                    <span>发布者: 用户A | 时间: 2025年5月20日</span>
+                </li>
+                <li>
+                    <h4>动态标题 2</h4>
+                    <p>这是另一个示例动态内容，展示社区活动的精彩瞬间。</p>
+                    <span>发布者: 用户B | 时间: 2025年5月19日</span>
+                </li>
+            </ul>
+        </div>
+        <a href="index.html" class="back-button">返回首页</a>
+        <button id="logout-button" class="logout-button">退出登录</button>
+    </section>
+    <footer>
+        <p>© 2025 AdownCommunity. 保留所有权利。</p>
+    </footer>
+    <script>
+        document.querySelector('.community-post form').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+            const date = new Date().toLocaleDateString();
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+            // 为动态生成唯一 ID
+            const id = Date.now();
+
+            // 创建新的动态对象
+            const newPost = {
+                id,
+                title,
+                content,
+                date,
+                author: currentUser.name,
+                likes: 0 // 初始化点赞数
+            };
+
+            // 将动态存储到 LocalStorage
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts.unshift(newPost);
+            localStorage.setItem('posts', JSON.stringify(posts));
+
+            // 动态添加到页面
+            addPostToPage(newPost);
+
+            // 清空表单
+            document.getElementById('post-title').value = '';
+            document.getElementById('post-content').value = '';
+        });
+
+        function addPostToPage(post) {
+            const postElement = document.createElement('li');
+            postElement.setAttribute('data-id', post.id);
+            postElement.innerHTML = `
+                <h4>${post.title}</h4>
+                <p>${post.content}</p>
+                <span>发布者: ${post.author} | 时间: ${post.date}</span>
+                <div class="post-actions">
+                    <button class="edit-post">编辑</button>
+                    <button class="delete-post">删除</button>
+                    <button class="like-post">点赞 (<span class="like-count">${post.likes || 0}</span>)</button>
+                </div>
+            `;
+            document.querySelector('.community-posts ul').prepend(postElement);
+
+            // 添加编辑、删除和点赞按钮的事件监听
+            postElement.querySelector('.edit-post').addEventListener('click', () => editPost(post.id));
+            postElement.querySelector('.delete-post').addEventListener('click', () => deletePost(post.id));
+            postElement.querySelector('.like-post').addEventListener('click', () => likePost(post.id));
+        }
+
+        function likePost(postId) {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const post = posts.find(p => p.id === postId);
+
+            if (post) {
+                post.likes = (post.likes || 0) + 1; // 增加点赞数
+                localStorage.setItem('posts', JSON.stringify(posts));
+
+                // 更新页面上的点赞数
+                const postElement = document.querySelector(`li[data-id='${postId}']`);
+                if (postElement) {
+                    const likeCountElement = postElement.querySelector('.like-count');
+                    likeCountElement.textContent = post.likes;
+                }
+            }
+        }
+
+        function editPost(postId) {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            const post = posts.find(p => p.id === postId);
+
+            if (post) {
+                // 填充表单以便编辑
+                document.getElementById('post-title').value = post.title;
+                document.getElementById('post-content').value = post.content;
+
+                // 删除旧动态
+                deletePost(postId);
+            }
+        }
+
+        function deletePost(postId) {
+            let posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts = posts.filter(p => p.id !== postId);
+            localStorage.setItem('posts', JSON.stringify(posts));
+
+            // 从页面中移除动态
+            const postElement = document.querySelector(`li[data-id='${postId}']`);
+            if (postElement) {
+                postElement.remove();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+            console.log('当前用户信息:', currentUser); // 调试信息
+
+            if (currentUser) {
+                // 显示当前登录用户的信息
+                const userInfo = document.createElement('p');
+                userInfo.textContent = `欢迎回来，${currentUser.name}！`;
+                document.body.insertBefore(userInfo, document.body.firstChild);
+
+                // 加载已发布的动态
+                const posts = JSON.parse(localStorage.getItem('posts')) || [];
+                posts.forEach(post => addPostToPage(post));
+            } else {
+                // 如果没有用户登录，跳转到登录页面
+                alert('请先登录！');
+                window.location.href = 'login.html';
+            }
+        });
+
+        // 添加清空所有动态的功能
+        const clearPostsButton = document.createElement('button');
+        clearPostsButton.textContent = '清空所有动态';
+        clearPostsButton.className = 'clear-posts-button';
+        document.querySelector('.community-section').appendChild(clearPostsButton);
+
+        clearPostsButton.addEventListener('click', () => {
+            if (confirm('确定要清空所有动态吗？')) {
+                localStorage.removeItem('posts');
+                document.querySelector('.community-posts ul').innerHTML = '';
+                alert('所有动态已清空！');
+            }
+        });
+
+        // 添加排序功能
+        const sortContainer = document.createElement('div');
+        sortContainer.className = 'sort-container';
+        sortContainer.innerHTML = `
+            <label for="sort-options">排序方式:</label>
+            <select id="sort-options">
+                <option value="date">按时间排序</option>
+                <option value="likes">按点赞数排序</option>
+            </select>
+        `;
+        document.querySelector('.community-section').insertBefore(sortContainer, document.querySelector('.community-posts'));
+
+        document.getElementById('sort-options').addEventListener('change', function() {
+            const sortBy = this.value;
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+            if (sortBy === 'date') {
+                posts.sort((a, b) => b.id - a.id); // 按时间降序
+            } else if (sortBy === 'likes') {
+                posts.sort((a, b) => b.likes - a.likes); // 按点赞数降序
+            }
+
+            // 更新页面显示
+            const postsContainer = document.querySelector('.community-posts ul');
+            postsContainer.innerHTML = '';
+            posts.forEach(post => addPostToPage(post));
+        });
+    </script>
+</body>
+</html>
